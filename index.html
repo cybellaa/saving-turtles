@@ -2,9 +2,14 @@
     <head>
         <title>saving turtles</title>
         <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+        <script
+          src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+          <script src = "movement.js"></script>
+          <script src = "game.js"></script>
     </head>
     <body>
-        <a-scene>
+        <a-scene physics = "gravity:0">
             <a-assets>
               <a-asset-item src = "cartoon_turtle/scene.gltf" id = "turtle"></a-asset-item>
               <a-asset-item src = "islands/scene.gltf" id = "island"></a-asset-item>
@@ -19,7 +24,20 @@
             text="font: aileronsemibold; width: 12; color: white; value: TURTLES\nTo Be RESCUED"></a-entity>
             <a-entity position="-8 0.3 0" id = "noofturtles"
             text="font: aileronsemibold;  align: center; width: 30; color: white; value: 5 "></a-entity>
-            </a-entity></a-entity>
+            <a-entity id ="gameOverText" position="15 0.3 0" text="font: exo2bold; align: center; width: 30; color: white;"></a-entity>
+
+           </a-entity></a-entity>
+           <a-entity scale = "5 5 5" gltf-model ="#island" position = "-10 -25 -12"></a-entity>
+           <a-entity scale = "5 5 5" gltf-model ="#turtle" id = "turtle1" position = "-5 -24 16" static-body = "shape:sphere; sphereRadius: 15"game></a-entity>
+           <a-entity scale = "5 5 5" gltf-model = "#turtle" id = "turtle2" position = " 36 -24 -12" static-body = "shape:sphere; sphereRadius: 15" game></a-entity>
+           <a-entity scale = "5 5 5" gltf-model ="#turtle" id = "turtle3" position = "-29 -24 -31" static-body = "shape:sphere; sphereRadius: 15" game></a-entity>
+           <a-entity scale = "5 5 5" gltf-model = "#turtle" id = "turtle4" position = " 24 -24 -56" static-body = "shape:sphere; sphereRadius: 15" game></a-entity>
+           <a-entity scale = "5 5 5" gltf-model = "#turtle" id = "turtle5" position = "15 -24 -26" static-body = "shape:sphere; sphereRadius: 15" game></a-entity>
+
+           <a-entity scale = "3 3 3" gltf-model = "#researcher" position = "0 -24 -12" static-body = "shape:sphere; sphereRadius: 5" rotation = "0 180 0" movement game></a-entity>
+
+
+            
         </a-scene>
     </body>
 </html>
